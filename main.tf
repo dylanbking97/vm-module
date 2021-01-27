@@ -1,8 +1,8 @@
 
 
-resource "google_compute_instance_template" "my-vm" {
+resource "google_compute_instance_template" "my_template" {
   project      = var.project_id
-  name         = "myvm"
+  name         = "mytemplate"
   machine_type = "e2-micro"
 
   disk {
@@ -29,7 +29,7 @@ resource "google_compute_instance_group_manager" "my_mig" {
   zone               = var.zone
 
   version {
-    instance_template = google_compute_instance_template.my-vm.id
+    instance_template = google_compute_instance_template.my_template.id
   }
 
   target_size = 3
