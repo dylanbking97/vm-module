@@ -1,6 +1,6 @@
 
 
-resource "google_compute_instance_template" "my-vm" {
+resource "google_compute_instance_template" "my-vm-2" {
   project      = var.project_id
   name         = "myvm"
   machine_type = "e2-micro"
