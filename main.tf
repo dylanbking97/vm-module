@@ -34,9 +34,3 @@ resource "google_compute_instance_group_manager" "my_mig" {
 
   target_size = 3
 }
-
-resource "google_service_account" "default" {
-  account_id   = "service_account_id"
-  display_name = "Service Account"
-  project      = var.project_id
-}
