@@ -2,7 +2,7 @@
 
 ### Inputs
 
-project_id = The ID of the GCP project in which the resource belongs
+project_id = The ID of the GCP project in which the resources belong
 
 zone = The zone that the machines should be created in
 
