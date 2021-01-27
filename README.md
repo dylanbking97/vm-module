@@ -9,7 +9,7 @@ zone = The zone that the machines should be created in
 subnet = VPC subnet that will contain the machines
 
 
-### Resources
+### Resources Created
 
 Instance Template: defines the VM type, OS, network interface, startup script (install & start Apache)
 
