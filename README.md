@@ -15,7 +15,7 @@ subnet = VPC subnet that will contain the machines
 module "mig" {
   source     = "github.com/dylanbking97/vm-module"
   project_id = google_project.tf_practice.project_id
-  zone       = "us-central1"
+  zone       = "us-central1-a"
   subnet     = google_compute_subnetwork.my_subnet.name
 }
 ```
