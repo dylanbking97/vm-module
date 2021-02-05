@@ -3,5 +3,5 @@ output "mig_id" {
 }
 
 output "mig_port" {
-  value = "HTTP"
+  value = "http"
 }

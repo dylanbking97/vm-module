@@ -48,7 +48,15 @@ resource "google_compute_instance_group_manager" "my_mig" {
   target_size = 3
 
   named_port {
-    name = "HTTP"
+    name = "http"
     port = 80
   }
 }
+
+# resource "google_compute_instance_group_named_port" "my_port" {
+#   group = google_container_cluster.my_cluster.instance_group_urls[0]
+#   zone = "us-central1-a"
+
+#   name = "http"
+#   port = 8080
+# }
