@@ -45,8 +45,8 @@ resource "google_compute_instance_group_manager" "my_mig" {
 
   target_size = 3
 
-  named_port {
-    name = "http"
-    port = 80
-  }
+  # named_port {
+  #   name = "http"
+  #   port = 80
+  # }
 }
