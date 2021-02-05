@@ -34,6 +34,7 @@ resource "google_compute_instance_template" "my_template" {
 
 
 resource "google_compute_instance_group_manager" "my_mig" {
+  provider = google-beta
   project = var.project_id
   name    = "my-mig"
 
