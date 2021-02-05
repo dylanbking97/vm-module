@@ -11,6 +11,6 @@ variable "subnet" {
   type = string
 }
 
-variable "health_check"{
-  type = string
-}
+# variable "health_check"{
+#   type = string
+# }
