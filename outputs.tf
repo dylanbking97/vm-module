@@ -3,5 +3,5 @@ output "mig_id" {
 }
 
 output "mig_port" {
-  value = google_compute_instance_group_manager.my_mig.named_port.name
+  value = google_compute_instance_group_manager.my_mig.named_port["name"]
 }
