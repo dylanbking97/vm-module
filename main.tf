@@ -45,4 +45,10 @@ resource "google_compute_instance_group_manager" "my_mig" {
   }
 
   target_size = 3
+
+  auto_healing_policies {
+    health_check      = var.health_check
+    initial_delay_sec = 300
+
+  }
 }

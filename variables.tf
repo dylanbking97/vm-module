@@ -10,3 +10,7 @@ variable "zone" {
 variable "subnet" {
   type = string
 }
+
+variable "health_check"{
+  type = string
+}
