@@ -20,15 +20,13 @@ resource "google_compute_instance_template" "my_template" {
 
   #metadata_startup_script = "sudo apt-get update; sudo apt-get install apache2 -y; sudo service start apache;"
   metadata_startup_script = <<EOT
-  apt-get update
-  apt-get install apache2 -y
-  a2ensite default-ssl
-  a2enmod ssl
-  vm_hostname="$(curl -H "Metadata-Flavor:Google" \
-  http://169.254.169.254/computeMetadata/v1/instance/name)"
-  echo "Page served from: $vm_hostname" | \
-  tee /var/www/html/index.html
-  systemctl restart apache2
+  apt-get update; 
+  apt-get install apache2 -y; 
+  a2ensite default-ssl; 
+  a2enmod ssl; 
+  vm_hostname="$(curl -H "Metadata-Flavor:Google" http://169.254.169.254/computeMetadata/v1/instance/name)";
+  echo "Page served from: $vm_hostname" | tee /var/www/html/index.html ;
+  systemctl restart apache2;
   EOT
 }
 
@@ -52,11 +50,3 @@ resource "google_compute_instance_group_manager" "my_mig" {
     port = 80
   }
 }
-
-# resource "google_compute_instance_group_named_port" "my_port" {
-#   group = google_container_cluster.my_cluster.instance_group_urls[0]
-#   zone = "us-central1-a"
-
-#   name = "http"
-#   port = 8080
-# }
