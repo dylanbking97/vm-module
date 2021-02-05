@@ -16,6 +16,8 @@ resource "google_compute_instance_template" "my_template" {
     subnetwork_project = var.project_id
   }
 
+  tags = ["allow-ssh", "lb-backend"]
+
   metadata_startup_script = "sudo apt-get update; sudo apt-get install apache2 -y; sudo service start apache;"
 
 }
